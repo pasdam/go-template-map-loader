@@ -1,0 +1,6 @@
+level1:
+  level2:
+    key1: value1
+    key2: value2
+
+leaf1: leaf value
