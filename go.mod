@@ -1,4 +1,4 @@
-module github.com/pasdam/go-yaml-map-loader
+module github.com/pasdam/go-template-map-loader
 
 go 1.14
 
