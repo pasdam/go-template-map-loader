@@ -2,7 +2,7 @@ package tm
 
 func MergeMaps(maps ...map[string]interface{}) map[string]interface{} {
 	if len(maps) < 1 {
-		return make(map[string]interface{}, 0)
+		return make(map[string]interface{})
 	}
 	out := make(map[string]interface{}, len(maps[0]))
 	for k, v := range maps[0] {
