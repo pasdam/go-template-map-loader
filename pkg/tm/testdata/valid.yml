@@ -1,6 +1,7 @@
 level1:
-  level2:
+  "level2":
     key1: value1
     key2: value2
+    "01234": value3
 
 leaf1: leaf value

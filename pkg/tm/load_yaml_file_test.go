@@ -24,10 +24,11 @@ func TestLoadYamlFile(t *testing.T) {
 				path: filepath.Join("testdata", "valid.yml"),
 			},
 			want: map[string]interface{}{
-				"level1": map[interface{}]interface{}{
-					"level2": map[interface{}]interface{}{
-						"key1": "value1",
-						"key2": "value2",
+				"level1": map[string]interface{}{
+					"level2": map[string]interface{}{
+						"key1":  "value1",
+						"key2":  "value2",
+						"01234": "value3",
 					},
 				},
 				"leaf1": "leaf value",
