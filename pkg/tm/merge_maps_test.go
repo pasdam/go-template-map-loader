@@ -80,6 +80,64 @@ func TestMergeMaps(t *testing.T) {
 				"k4": "v4",
 			},
 		},
+		{
+			name: "Should merge maps with interface keys",
+			args: args{
+				maps: []map[string]interface{}{
+					{
+						"l1": map[interface{}]interface{}{
+							1: "k1v1",
+							2: "k2v1",
+						},
+					},
+					{
+						"l1": map[interface{}]interface{}{
+							2: "k2v2",
+							3: "k3v1",
+						},
+					},
+				},
+			},
+			want: map[string]interface{}{
+				"l1": map[interface{}]interface{}{
+					1: "k1v1",
+					2: "k2v2",
+					3: "k3v1",
+				},
+			},
+		},
+		{
+			name: "Should merge maps with int keys",
+			args: args{
+				maps: []map[string]interface{}{
+					{
+						"l1": map[string]interface{}{
+							"l2": map[int]interface{}{
+								1: "k1v1",
+								2: "k2v1",
+							},
+						},
+					},
+					{
+						"l1": map[string]interface{}{
+							"l2": map[int]interface{}{
+								2: "k2v2",
+								3: "k3v1",
+							},
+						},
+					},
+				},
+			},
+			want: map[string]interface{}{
+				"l1": map[string]interface{}{
+					"l2": map[int]interface{}{
+						1: "k1v1",
+						2: "k2v2",
+						3: "k3v1",
+					},
+				},
+			},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
